@@ -16,18 +16,4 @@ The main focus of this repository is to serve as a technical progression portfol
 *   Algorithms and problem-solving
 *   Software Engineering practices and design patterns
 
----
 
-## 📂 Directory Structure
-
-The studies are organized into thematic packages for easy navigation:
-
-```text
-📦 java-studies
- ┣ 📂 src
- ┃ ┣ 📂 01-fundamentals         # Variables, loops, conditionals
- ┃ ┣ 📂 02-oop                  # Classes, inheritance, polymorphism, encapsulation
- ┃ ┣ 📂 03-algorithms           # Logic exercises and data structures
- ┃ ┗ 📂 04-software_engineering # Practices, design patterns, and advanced exercises
- ┣ 📜 .gitignore
- ┗ 📜 README.md
