@@ -21,7 +21,43 @@ class Circle extends Shape {
     }
 }
 
-// TODO: create class Square extends Shape (one side) and class Triangle extends Shape (base and height)
+class Square extends Shape {
+    private final double side;
+
+    Square(double side) {
+        this.side = side;
+    }
+
+    @Override
+    String name() {
+        return "Square";
+    }
+
+    @Override
+    double area() {
+        return side * side;
+    }
+}
+
+class Triangle extends Shape {
+    private final double base;
+    private final double height;
+
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    String name() {
+        return "Triangle";
+    }
+
+    @Override
+    double area() {
+        return base * height / 2;
+    }
+}
 
 void main() {
     int n = Integer.parseInt(IO.readln().trim());
@@ -32,10 +68,14 @@ void main() {
         Shape shape = null;
         if (type.equals("circle")) {
             shape = new Circle(Double.parseDouble(parts[1]));
+        } else if (type.equals("square")) {
+            shape = new Square(Double.parseDouble(parts[1]));
+        } else if (type.equals("triangle")) {
+            shape = new Triangle(Double.parseDouble(parts[1]), Double.parseDouble(parts[2]));
         }
-        // TODO: create a Square for "square" and a Triangle for "triangle"
 
-        // TODO: print the shape as  Name: area  (2 decimals) and add its area to total
+        IO.println(shape.name() + ": " + String.format(Locale.US, "%.2f", shape.area()));
+        total += shape.area();
     }
-    // TODO: print  Total area: <total>  (2 decimals)
+    IO.println("Total area: " + String.format(Locale.US, "%.2f", total));
 }
